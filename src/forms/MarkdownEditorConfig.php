@@ -12,7 +12,6 @@ namespace SilverStripers\markdown\forms;
 use LogicException;
 use SilverStripe\Core\Config\Config_ForClass;
 use SilverStripe\Core\Config\Configurable;
-use SilverStripe\Core\Convert;
 use SilverStripe\Core\Injector\Injectable;
 use SilverStripe\Core\Manifest\ModuleLoader;
 use SilverStripe\Core\Manifest\ModuleResourceLoader;
@@ -250,7 +249,7 @@ class MarkdownEditorConfig
     {
         return [
             'data-editor' => 'markDown',
-            'data-config' => Convert::array2json($this->getSettings()),
+            'data-config' => json_encode($this->getSettings()),
         ];
     }
 }
